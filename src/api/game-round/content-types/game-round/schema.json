@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "game_rounds",
+  "info": {
+    "singularName": "game-round",
+    "pluralName": "game-rounds",
+    "displayName": "GameRound"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "n_round": {
+      "type": "integer"
+    },
+    "closed": {
+      "type": "boolean",
+      "default": false
+    },
+    "game_session": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::game-session.game-session"
+    }
+  }
+}

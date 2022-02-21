@@ -13,10 +13,13 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "n_rounds": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "closed": {
       "type": "boolean",
@@ -25,12 +28,24 @@
     "game": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::game.game"
+      "target": "api::game.game",
+      "required": true
     },
     "users": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "plugin::users-permissions.user"
+      "target": "plugin::users-permissions.user",
+      "required": true
+    },
+    "detailsPGGStandard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pgg.details-pgg-standard"
+    },
+    "detailsUGStandard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ug.details-ug-standard"
     }
   }
 }

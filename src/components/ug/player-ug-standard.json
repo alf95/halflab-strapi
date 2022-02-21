@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_ug_player_ug_standards",
+  "info": {
+    "displayName": "PlayerUGStandard",
+    "icon": "ellipsis-v"
+  },
+  "options": {},
+  "attributes": {
+    "endowment": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}

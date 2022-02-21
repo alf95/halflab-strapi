@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_pgg_details_pgg_standards",
+  "info": {
+    "displayName": "DetailsPGGStandard",
+    "icon": "chart-pie",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "mpcr": {
+      "type": "decimal",
+      "required": true
+    },
+    "endowment": {
+      "type": "float",
+      "required": true
+    }
+  }
+}

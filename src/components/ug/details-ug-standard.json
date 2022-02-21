@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_ug_details_ug_standards",
+  "info": {
+    "displayName": "DetailsUGStandard",
+    "icon": "adjust",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "endowment": {
+      "type": "float",
+      "required": true
+    }
+  }
+}

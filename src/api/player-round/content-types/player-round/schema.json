@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "player_rounds",
+  "info": {
+    "singularName": "player-round",
+    "pluralName": "player-rounds",
+    "displayName": "PlayerRound",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "n_round": {
+      "type": "integer"
+    },
+    "closed": {
+      "type": "boolean",
+      "default": false
+    },
+    "roundGame": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::game-round.game-round"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "playerPGGStandard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pgg.player-pgg-standard"
+    },
+    "playerUGStandard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ug.player-ug-standard"
+    }
+  }
+}

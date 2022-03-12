@@ -32,4 +32,14 @@ module.exports = createCoreController('api::game-session.game-session', ({ strap
     
     return {data, meta};
   }*/
+
+  async find(ctx) {
+    // some logic here
+    const { id, role } = ctx.state.user;
+    const isAdmin = role.type === 'admin';
+    const { data, meta } = await super.find(ctx);
+    // some more logic
+  
+    return { data, meta };
+  }
 }));

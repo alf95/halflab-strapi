@@ -15,7 +15,7 @@ module.exports = createCoreController('api::game-session.game-session', ({ strap
       const sessionCreated = data.attributes;
       let created = [];
       for(let n_round = 1; n_round <= sessionCreated.n_rounds; ++n_round){
-        
+
         let entity = await strapi.service('api::game-round.game-round').create({data:{
           game_session:data.id,
           n_round:n_round,
@@ -26,10 +26,10 @@ module.exports = createCoreController('api::game-session.game-session', ({ strap
       console.log(data);
       console.log(created);
 
-      
 
 
-    
+
+
     return {data, meta};
   }*/
 
@@ -37,9 +37,15 @@ module.exports = createCoreController('api::game-session.game-session', ({ strap
     // some logic here
     const { id, role } = ctx.state.user;
     const isAdmin = role.type === 'admin';
+    if(!isAdmin){
+      ctx.query = { ...ctx.query, filters: {
+          users:id
+        }
+      }
+    }
     const { data, meta } = await super.find(ctx);
     // some more logic
-  
+
     return { data, meta };
   }
 }));

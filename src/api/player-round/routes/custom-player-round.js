@@ -7,7 +7,10 @@ module.exports = {
         config: {
           policies: [],
           description: "Get current round by session id",
-          
+          tag:{
+            name: "Player-round",
+            
+          }
         }
       }
     ]

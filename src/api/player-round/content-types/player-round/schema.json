@@ -21,8 +21,9 @@
     },
     "roundGame": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::game-round.game-round"
+      "relation": "manyToOne",
+      "target": "api::game-round.game-round",
+      "inversedBy": "player_rounds"
     },
     "user": {
       "type": "relation",

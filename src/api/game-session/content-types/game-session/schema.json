@@ -27,9 +27,9 @@
     },
     "game": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::game.game",
-      "required": true
+      "inversedBy": "game_sessions"
     },
     "users": {
       "type": "relation",
@@ -46,6 +46,12 @@
       "type": "component",
       "repeatable": false,
       "component": "ug.details-ug-standard"
+    },
+    "game_rounds": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::game-round.game-round",
+      "mappedBy": "game_session"
     }
   }
 }
